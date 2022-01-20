@@ -9,21 +9,21 @@
 #define NICKNAME 2
 #define PHONE_NBR 3
 #define SECRET 4
+#define CONTACT_FIELDS 5
 
 class Contact
 {
     public:
         Contact(void);
         ~Contact(void);
+		int id; //put that in private
         void            setinfos();
-        void            print_contact();
+        void            print_all_contacts();
+		void			print_contact();
+		void			ask_until_valid(int input);
     private :
-        std::string contact_data[5];
-        //std::string firstname;
-        //std::string last_name;
-        //std::string nickname;
-        //std::string phone_number;
-        //std::string darkest_secret;
+        std::string contact_data[CONTACT_FIELDS];
+		std::string contact_fieldnames[6];
 };
 #endif
 

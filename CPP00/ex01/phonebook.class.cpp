@@ -3,38 +3,72 @@
 
 Phonebook::Phonebook(int nb_user) : nb_user(nb_user)
 {
-    std::cout << "constructor call" <<std::endl;
     return;
 }
 
 Phonebook::~Phonebook(void)
 {
-    std::cout << "destructor call" << std::endl;
     return;
 }
 
-int Phonebook::get_usernb()
+void Phonebook::add_contact()
 {
-    return (this->nb_user);
-}
-
-int Phonebook::add_contact()
-{
-    int usr_nb = get_usernb();
-    if (usr_nb < 8)
+    if (this->nb_user < 8)
     {
-        this->contacts[usr_nb].setinfos();
+        this->contacts[this->nb_user].setinfos();
+		this->contacts[this->nb_user].id = get_user_nb();
         this->nb_user++;
-        return (0);
     }
-    return (1);
+	else
+	{
+		std::cout << "Sorry , the phonebook is full you can't add more contacts" << std::endl;
+	}
 }
 
 int Phonebook::search_contact()
 {
-    for (int i = 0; i < get_usernb(); i++)
+	std::string user_input_id;
+	int search_index;
+	if (this->nb_user == 0)
+	{
+		std::cout << "No contacts founds in the Phonebook" << std::endl;
+		return (0);
+	}
+    for (int i = 0; i < this->nb_user; i++)
     {
-        contacts[i].print_contact();
+        contacts[i].print_all_contacts();
     }
+	std::cout << "Enter the ID of the contact you want to display :";
+	std::getline(std::cin, user_input_id);
+	while (user_input_id.length() != 1 || user_input_id[0] > (this->nb_user + '0' - 1) || user_input_id[0] < (this->nb_user + '0' - 1))
+	{
+		std::cout << "wrong input , please enter a valid id :";
+		std::getline(std::cin, user_input_id);
+	}
+
+	search_index = user_input_id[0] - '0';
+	contacts[search_index].print_contact();
+
     return (0);
+}
+
+int Phonebook::get_user_nb()
+{
+	return (this->nb_user);
+}
+
+int Phonebook::wait_cmd()
+{
+	std::string new_cmd;
+
+	while (new_cmd.compare("EXIT") != 0)
+	{
+		std::cout << "please enter a command (SEARCH, ADD or EXIT) :";
+		std::getline(std::cin, new_cmd);
+		if (new_cmd.compare("ADD") == 0)
+			this->add_contact();
+		if (new_cmd.compare("SEARCH") == 0)
+			this->search_contact();
+	}
+	return (0);
 }

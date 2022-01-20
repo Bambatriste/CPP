@@ -8,10 +8,10 @@ class Phonebook
     public:
         Phonebook(int nb_users);
         ~Phonebook(void);
-        int get_usernb();
-        int add_contact(void);
+        void add_contact(void);
         int search_contact(void);
-        int exit_phonebook(void);
+		int wait_cmd(void);
+		int get_user_nb();
     private:
         Contact contacts[8];
         int nb_user;

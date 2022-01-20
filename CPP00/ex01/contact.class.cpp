@@ -1,7 +1,15 @@
 #include "contact.class.hpp"
 
+
     Contact::Contact(void)
     {
+		contact_fieldnames[0] = "index";
+		contact_fieldnames[1] = "first name";
+		contact_fieldnames[2] = "last name";
+		contact_fieldnames[3] = "nickname";
+		contact_fieldnames[4] = "phone number";
+		contact_fieldnames[5] = "darkest secret";
+
         return;
     }
 
@@ -10,28 +18,71 @@
         return;
     }
 
+	void	Contact::ask_until_valid(int input_id)
+	{
+		std::string input_str;
+
+		std::cout << "please enter contact ";
+		std::cout << this->contact_fieldnames[input_id + 1];
+		std::cout << " :";
+
+		std::getline(std::cin, input_str);
+		while (input_str.length() == 0)
+		{
+			std::cout << "empty field , please try again :";
+			std::getline(std::cin, input_str);
+		}
+		this->contact_data[input_id] = input_str;
+	}
+
     void    Contact::setinfos(void)
     {
-        std::cout << "please enter contact first name" << std::endl;
-        std::getline(std::cin, this->contact_data[FIRST_NAME]);
-        std::cout << "please enter contact last name" << std::endl;
-        std::getline(std::cin, this->contact_data[LAST_NAME]);
-        std::cout << "please enter contact nickname" << std::endl;
-        std::getline(std::cin, this->contact_data[NICKNAME]);
-        std::cout << "please enter contact phone number" << std::endl;
-        std::getline(std::cin, this->contact_data[PHONE_NBR]);
-        std::cout << "please enter contact darkest secret" << std::endl;
-        std::getline(std::cin, this->contact_data[SECRET]);
+		for (int i = 0; i < 5; i++)
+		{
+			ask_until_valid(i);
+		}
     }
 
-    void    Contact::print_contact(void)
+    void    Contact::print_all_contacts(void)
     {
-        for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 4; i++)
+		{
+				std::cout << "|";
+				std::cout << std::setw(10);
+				std::cout << contact_fieldnames[i];
+		}
+		std::cout << "|";
+		std::cout << std::endl;
+		std::cout << "|";
+		std::cout << std::setw(10);
+		std::cout << this->id;
+        for (int i = 0; i < 3; i++)
         {
             std::cout << "|";
-            std::cout << std::setw(10);
-            std::cout << this->contact_data[i];
+			if (this->contact_data[i].length() > 10)
+			{
+				std::cout << this->contact_data[i].substr(0, 9);
+				std::cout << ".";
+			}
+			else
+			{
+				std::cout << std::setw(10);
+				std::cout << this->contact_data[i];
+			}
         }
         std::cout << "|";
         std::cout << std::endl;
     }
+
+	void	Contact::print_contact()
+	{
+		int i = 0;
+
+		while (i < CONTACT_FIELDS)
+		{
+			std::cout << this->contact_fieldnames[i + 1];
+			std::cout << ": ";
+			std::cout << this->contact_data[i] <<std::endl;
+			i++;
+		}
+	}
