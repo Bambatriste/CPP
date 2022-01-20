@@ -45,14 +45,6 @@
 
     void    Contact::print_all_contacts(void)
     {
-		for (int i = 0; i < 4; i++)
-		{
-				std::cout << "|";
-				std::cout << std::setw(10);
-				std::cout << contact_fieldnames[i];
-		}
-		std::cout << "|";
-		std::cout << std::endl;
 		std::cout << "|";
 		std::cout << std::setw(10);
 		std::cout << this->id;

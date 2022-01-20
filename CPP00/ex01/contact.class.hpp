@@ -21,9 +21,10 @@ class Contact
         void            print_all_contacts();
 		void			print_contact();
 		void			ask_until_valid(int input);
+        std::string contact_fieldnames[6];
     private :
         std::string contact_data[CONTACT_FIELDS];
-		std::string contact_fieldnames[6];
+		
 };
 #endif
 

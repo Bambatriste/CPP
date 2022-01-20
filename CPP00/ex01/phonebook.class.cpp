@@ -34,18 +34,25 @@ int Phonebook::search_contact()
 		std::cout << "No contacts founds in the Phonebook" << std::endl;
 		return (0);
 	}
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << "|";
+		std::cout << std::setw(10);
+		std::cout << contacts[0].contact_fieldnames[i];
+	}
+	std::cout << "|";
+	std::cout << std::endl;
     for (int i = 0; i < this->nb_user; i++)
     {
         contacts[i].print_all_contacts();
     }
 	std::cout << "Enter the ID of the contact you want to display :";
 	std::getline(std::cin, user_input_id);
-	while (user_input_id.length() != 1 || user_input_id[0] > (this->nb_user + '0' - 1) || user_input_id[0] < (this->nb_user + '0' - 1))
+	while (user_input_id.length() != 1 || user_input_id[0] > (this->nb_user + '0' - 1) || (user_input_id[0] < 0))
 	{
 		std::cout << "wrong input , please enter a valid id :";
 		std::getline(std::cin, user_input_id);
 	}
-
 	search_index = user_input_id[0] - '0';
 	contacts[search_index].print_contact();
 
