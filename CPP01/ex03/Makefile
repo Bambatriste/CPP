@@ -1,9 +1,6 @@
-NAME = Zombies
+NAME = UnnecessaryViolence
 
-SRCS = Zombie.cpp\
-		main.cpp\
-		newZombie.cpp\
-		randomChump.cpp\
+SRCS = main.cpp\
 
 CC = clang++
 
