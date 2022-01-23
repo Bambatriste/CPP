@@ -9,12 +9,13 @@
  {
  }
 
- int getType() const
+std::string Weapon::getType() const
  {
-
+	 return (this->_name);
  }
 
- void	setType(int)
+ void	Weapon::setType(std::string name)
  {
-	 
+	 this->_name = name;
  }
+ 

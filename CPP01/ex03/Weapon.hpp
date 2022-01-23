@@ -7,12 +7,11 @@
  {
  	private:
  		std::string _name;
-		 int weapon_type;
  	public:
  		Weapon(std::string name);
 		~Weapon();
-		int getType() const;
-		void	setType(int);
+		std::string		getType() const;
+		void			setType(std::string name);
  };
 
 #endif

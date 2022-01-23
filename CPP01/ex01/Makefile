@@ -1,9 +1,8 @@
-NAME = Zombies
+NAME = ZombieHorde
 
 SRCS = Zombie.cpp\
 		main.cpp\
-		newZombie.cpp\
-		randomChump.cpp\
+		ZombieHorde.cpp\
 
 CC = clang++
 
