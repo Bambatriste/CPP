@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-Sed42::Sed42(/* args */)
+Sed42::Sed42()
 {
 }
 
@@ -14,17 +14,17 @@ Sed42::~Sed42()
 std::string Sed42::str_replace(std::string const &line, std::string const &search, std::string const &replace)
 {
 	std::string newline;
-	int j = 0;
+	size_t j = 0;
 
-	for (int i = 0; i < line.length(); i++)
+	for (size_t i = 0; i < line.length(); i++)
 	{
 		j = 0;
 		while (line[j + i] == search[j] && j < search.length())
 			j++;
 		if (j == search.length())
 		{
-			newline += search;
-			i += search.length();
+			newline += replace;
+			i += search.length() - 1;
 		}
 		else
 			newline += line[i];
@@ -37,9 +37,15 @@ void	Sed42::replace(std::string const &filename, std::string const &search, std:
 	std::ifstream file;
 	std::ofstream file_out;
 	std::string line;
+	std::string newfile = filename + ".replace";
 
-	file.open(filename);
-	file_out.open(filename + ".replace", std::ios::trunc);
+	file.open(filename.c_str());
+	if (!file.is_open())
+	{
+		std::cout << "Couldn't open filename" << std::endl;
+		return ;
+	}
+	file_out.open(newfile.c_str(), std::ios::trunc);
 	while (std::getline(file, line))
 	{
 		file_out << this->str_replace(line, search, replace);

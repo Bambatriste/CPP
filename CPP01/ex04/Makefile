@@ -1,6 +1,7 @@
 NAME = 42Sed
 
 SRCS = main.cpp\
+		Sed42.cpp\
 
 CC = clang++
 
