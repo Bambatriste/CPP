@@ -1,9 +1,7 @@
-NAME = Zombies
+NAME = karenFilter
 
-SRCS = Zombie.cpp\
-		main.cpp\
-		newZombie.cpp\
-		randomChump.cpp\
+SRCS = main.cpp\
+		Karen.cpp\
 
 CC = clang++
 

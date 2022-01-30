@@ -1,13 +1,13 @@
-NAME = Karen2.0
+NAME = ClapTrap
 
 SRCS = main.cpp\
-		Karen.cpp\
+		ClapTrap.cpp\
 
-CC = clang++
+CC = c++
 
 OBJS = ${SRCS:.cpp=.o}
 
-CFLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
