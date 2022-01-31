@@ -4,21 +4,22 @@
 # include <iostream>
 # include <string>
 
-class DiamondTrap
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+
+class DiamondTrap :  virtual public FragTrap ,virtual public ScavTrap
 {
-
 	public:
-
-		DiamondTrap();
-		DiamondTrap( DiamondTrap const & src );
+		DiamondTrap(std::string name);
+		DiamondTrap(DiamondTrap const &src);
 		~DiamondTrap();
-
-		DiamondTrap &		operator=( DiamondTrap const & rhs );
+		DiamondTrap &operator=(DiamondTrap const &rhs);
+		void	attack(std::string const &target);
+		void	whoAmI(void);
 
 	private:
+		std::string _name;
 
 };
-
-std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i );
 
 #endif /* ***************************************************** DIAMONDTRAP_H */

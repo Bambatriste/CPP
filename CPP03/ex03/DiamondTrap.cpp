@@ -4,14 +4,32 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap(std::string name)
+:
+ClapTrap(name),
+FragTrap(name),
+ScavTrap(name),
+_name(name)
 {
+	ClapTrap::setName(name + "_clap_name");
+	setHitpoints(FragTrap::init_hit_points_);
+	setEnergy(ScavTrap::init_energy_points_);
+	setDamage(FragTrap::init_attack_damage_);
+	std::cout << "DiamondTrap " << this->_name << " has been created" << std::endl;
 }
 
-DiamondTrap::DiamondTrap( const DiamondTrap & src )
+DiamondTrap::DiamondTrap(const DiamondTrap &src)
+:
+ClapTrap(),
+FragTrap(),
+ScavTrap()
 {
+	this->_name = src._name;
+	setHitpoints(FragTrap::init_hit_points_);
+	setEnergy(ScavTrap::init_energy_points_);
+	setDamage(FragTrap::init_attack_damage_);
+	std::cout << "DiamondTrap " << this->_name << " has been copied" << std::endl;
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -19,37 +37,35 @@ DiamondTrap::DiamondTrap( const DiamondTrap & src )
 
 DiamondTrap::~DiamondTrap()
 {
+	std::cout << "DiamondTrap " << this->_name << " has been destroyed" << std::endl;
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
+DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
-	return *this;
+	ClapTrap::operator=(rhs);
+	return (*this);
 }
-
-std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
+void	DiamondTrap::attack(std::string const &target)
+{
+	this->FragTrap::attack(target);
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+void	DiamondTrap::whoAmI(void)
+{
+	std::cout << "My name is " << this->_name << " and my grandfather name is " << ClapTrap::getName() << std::endl;
+}
 
 
 /* ************************************************************************** */

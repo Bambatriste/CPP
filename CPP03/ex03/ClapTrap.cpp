@@ -15,6 +15,11 @@ ClapTrap::ClapTrap(const ClapTrap &src)
 	std::cout << "ClapTrap " << _name << " has been created" << std::endl;
 }
 
+ClapTrap::ClapTrap():_name("Default_Claptrap"), _hitpoints(10), _attack_damage(0), _energy_points(10)
+{
+	std::cout << "ClapTrap " << this->_name << " has been created" << std::endl;
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -67,7 +72,6 @@ void ClapTrap::takeDamage(unsigned int amount)
 		this->_hitpoints -= amount;
 		std::cout << this->_name << " takes " << amount << " damages" << std::endl;
 	}
-	
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

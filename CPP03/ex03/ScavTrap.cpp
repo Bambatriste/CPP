@@ -4,18 +4,32 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name)
+ScavTrap::ScavTrap(std::string name)
 {
-	setHitpoints(100);
-	setEnergy(50);
-	setDamage(20);
-	std::cout << "ScavTrap " << getName() << " has been created" << std::endl;
+	setHitpoints(init_hit_points_);
+	setEnergy(init_energy_points_);
+	setDamage(init_attack_damage_);
+	this->_name = name;
+	std::cout << "ScavTrap " << this->_name << " has been created" << std::endl;
 }
 
-ScavTrap::ScavTrap( const ScavTrap &src): ClapTrap(src)
+ScavTrap::ScavTrap( const ScavTrap &src)
 {
-	std::cout << "ScavTrap " << getName() << " has been created" << std::endl;
+	this->_name = src._name;
+	this->_hitpoints = src._hitpoints;
+	this->_energy_points = src._hitpoints;
+	this->_attack_damage = src._attack_damage;
+	std::cout << "ScavTrap " << this->_name << " has been copied" << std::endl;
 }
+
+ScavTrap::ScavTrap():_name("Default_Scavtrap")
+{
+	setHitpoints(init_hit_points_);
+	setEnergy(init_energy_points_);
+	setDamage(init_attack_damage_);
+	std::cout << "ScavTrap " << this->_name << " has been created" << std::endl;
+}
+
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -23,9 +37,8 @@ ScavTrap::ScavTrap( const ScavTrap &src): ClapTrap(src)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " << getName() << " has been destroyed" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " has been destroyed" << std::endl;
 }
-
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -46,18 +59,18 @@ void ScavTrap::attack(const std::string &target)
 	if (getEnergy() > 0)
 	{
 		unsigned int energy = getEnergy();
-		std::cout << getName() << " the ScavTrap deals " << getDamage() << " to " << target << std::endl;
+		std::cout << this->_name << " the ScavTrap deals " << getDamage() << " to " << target << std::endl;
 		setEnergy(--energy);
 	}
 	else
 	{
-		std::cout << getName() << " The ScavTrap could not attack because it had no more energy !" << std::endl;
+		std::cout << this->_name << " The ScavTrap could not attack because it had no more energy !" << std::endl;
 	}
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << getName() << " The Scavtrap has entered guard mode" << std::endl;
+	std::cout << this->_name << " The Scavtrap has entered guard mode" << std::endl;
 }
 
 
