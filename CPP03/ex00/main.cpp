@@ -20,5 +20,11 @@ int main()
 	std::cout << "Roger has " << a.getEnergy() << " energy points left" << std::endl;
 	std::cout << "Martin has " << b.getEnergy() << " energy points left" << std::endl;
 
+	ClapTrap z = b;
+	std::cout << z.getHitpoints() << std::endl;
+
+	ClapTrap y(a);
+	std::cout << y.getEnergy() << std::endl;
+
 	return (0);
 }

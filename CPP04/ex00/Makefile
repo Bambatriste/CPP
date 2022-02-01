@@ -1,8 +1,11 @@
-NAME = ScavTraps
+NAME = CatsAndDogs
 
 SRCS = main.cpp\
-		ClapTrap.cpp\
-		ScavTrap.cpp\
+		Animal.cpp\
+		Dog.cpp\
+		Cat.cpp\
+		WrongAnimal.cpp\
+		WrongCat.cpp
 
 CC = c++
 

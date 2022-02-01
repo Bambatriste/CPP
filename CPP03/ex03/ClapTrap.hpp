@@ -22,10 +22,10 @@ class ClapTrap
 		void 			setEnergy(unsigned int energy_value);
 		unsigned int	getEnergy();
 		void 			setName(std::string name);
-		std::string		getName();
+		std::string	 getName();
 
 	private :
-		std::string _name;
+		std::string  _name;
 	protected:
 		unsigned int _hitpoints;
 		unsigned int _attack_damage;

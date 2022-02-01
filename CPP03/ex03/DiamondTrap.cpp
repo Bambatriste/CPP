@@ -20,14 +20,15 @@ _name(name)
 
 DiamondTrap::DiamondTrap(const DiamondTrap &src)
 :
-ClapTrap(),
-FragTrap(),
-ScavTrap()
+ClapTrap(src._name),
+FragTrap(src._name),
+ScavTrap(src._name),
+_name(src._name)
 {
-	this->_name = src._name;
-	setHitpoints(FragTrap::init_hit_points_);
-	setEnergy(ScavTrap::init_energy_points_);
-	setDamage(FragTrap::init_attack_damage_);
+	ClapTrap::setName(_name + "_clap_name");
+	setHitpoints(src._hitpoints);
+	setEnergy(src._energy_points);
+	setDamage(src._attack_damage);
 	std::cout << "DiamondTrap " << this->_name << " has been copied" << std::endl;
 }
 

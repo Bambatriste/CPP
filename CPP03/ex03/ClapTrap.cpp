@@ -120,7 +120,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 		{
 			this->_name = name;
 		}
-		std::string		ClapTrap::getName()
+		std::string	 ClapTrap::getName()
 		{
 			return (this->_name);
 		}

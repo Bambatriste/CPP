@@ -12,15 +12,15 @@ class ScavTrap : public ClapTrap
 
 		ScavTrap(std::string name);
 		ScavTrap( ScavTrap const & src );
+		ScavTrap();
 		~ScavTrap();
 		ScavTrap &operator=(ScavTrap const &rhs);
 		void guardGate();
 		void attack(const std::string &target);
-
 	private:
+		std::string _name;
 
 };
 
-std::ostream &			operator<<( std::ostream & o, ScavTrap const & i );
 
 #endif /* ******************************************************** SCAVTRAP_H */

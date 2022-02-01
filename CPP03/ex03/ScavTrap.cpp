@@ -59,18 +59,18 @@ void ScavTrap::attack(const std::string &target)
 	if (getEnergy() > 0)
 	{
 		unsigned int energy = getEnergy();
-		std::cout << this->_name << " the ScavTrap deals " << getDamage() << " to " << target << std::endl;
+		std::cout << this->_name << " deals " << getDamage() << " to " << target << std::endl;
 		setEnergy(--energy);
 	}
 	else
 	{
-		std::cout << this->_name << " The ScavTrap could not attack because it had no more energy !" << std::endl;
+		std::cout << this->_name << "could not attack because it had no more energy !" << std::endl;
 	}
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << this->_name << " The Scavtrap has entered guard mode" << std::endl;
+	std::cout << this->_name << " has entered guard mode" << std::endl;
 }
 
 

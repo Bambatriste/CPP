@@ -9,6 +9,11 @@ ClapTrap::ClapTrap(std::string name):_name(name), _hitpoints(10), _attack_damage
 	std::cout << "ClapTrap " << _name << " has been created" << std::endl;
 }
 
+ClapTrap::ClapTrap():_name("ClapTrap"), _hitpoints(10), _attack_damage(0), _energy_points(10)
+{
+	std::cout << "ClapTrap " << _name << " has been created" << std::endl;
+}
+
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
 	*this = src;
@@ -30,14 +35,12 @@ ClapTrap::~ClapTrap()
 
 ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 {
-
 	_name = rhs._name;
 	_hitpoints = rhs._hitpoints;
 	_attack_damage = rhs._attack_damage;
 	_energy_points = rhs._energy_points;
 	return (*this);
 }
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
