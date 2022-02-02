@@ -5,6 +5,7 @@
 # include <string>
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 
 class Cat : public Animal
@@ -15,6 +16,10 @@ class Cat : public Animal
 		virtual ~Cat();
 		Cat &operator=(Cat const &rhs);
 		void	makeSound() const;
+		Brain *getBrain() const;
+	private:
+		Brain *_brain;
+		
 };
 
 

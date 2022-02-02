@@ -1,7 +1,10 @@
-NAME = ClapTrap
+NAME = AbstractClass
 
 SRCS = main.cpp\
-		ClapTrap.cpp\
+		Animal.cpp\
+		Cat.cpp\
+		Dog.cpp\
+		Brain.cpp\
 
 CC = c++
 

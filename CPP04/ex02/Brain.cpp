@@ -1,19 +1,22 @@
-#include "Animal.hpp"
+#include "Brain.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal()
+Brain::Brain()
 {
-	std::cout << "an Animal was created by default constructor" << std::endl; 
+	std::cout << "a brain was created by default constructor" << std::endl;
 }
 
-Animal::Animal(const Animal &src)
+Brain::Brain(const Brain &src)
 {
-	type = src.type;
+	for (int i = 0; i < 100; i++)
+	{
+		ideas[i] = src.ideas[i];
+	}
 	*this = src;
-	std::cout << "an Animal was created by copy constructor" << std::endl; 
+	std::cout << "a brain was created by copy constructor" << std::endl;
 }
 
 
@@ -21,9 +24,9 @@ Animal::Animal(const Animal &src)
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+Brain::~Brain()
 {
-	std::cout << "an Animal was destroyed" << std::endl;
+	std::cout << "A brain has been destroyed" << std::endl;
 }
 
 
@@ -31,33 +34,27 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=(Animal const &rhs)
+Brain &				Brain::operator=( Brain const & rhs )
 {
 	if ( this != &rhs )
 	{
-		this->type = rhs.type;
+		for (int i = 0; i < 100; i++)
+		{
+			this->ideas[i] = rhs.ideas[i];
+		}
 	}
 	return *this;
 }
+
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Animal::makeSound() const
-{
-	std::cout << "A random animal sound " << std::endl;
-}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-
-std::string  Animal::getType() const
-{
-	return (this->type);
-
-}
 
 
 /* ************************************************************************** */

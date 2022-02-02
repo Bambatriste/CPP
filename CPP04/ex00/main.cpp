@@ -12,10 +12,11 @@ int main()
 
 	
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
+	std::cout << j->getType() << " : ";
+	j->makeSound(); //dog sound
+	std::cout << i->getType() << " : ";
 	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+	
 	meta->makeSound();
  
 	delete meta;
@@ -29,7 +30,7 @@ int main()
 
 	std::cout << z->getType() << " " << std::endl;
 	y->makeSound();
-	z->makeSound();
+	z->makeSound();// makes animal sound because this time makeSound isn t virtual
 
 	delete y;
 	delete z;

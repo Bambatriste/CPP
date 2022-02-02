@@ -44,11 +44,6 @@ Animal &				Animal::operator=(Animal const &rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Animal::makeSound() const
-{
-	std::cout << "A random animal sound " << std::endl;
-}
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

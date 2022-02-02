@@ -31,7 +31,7 @@ WrongAnimal::~WrongAnimal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-WrongAnimal &				WrongAnimal::operator=(WrongAnimal const &rhs)
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs)
 {
 	if ( this != &rhs )
 	{
@@ -40,12 +40,6 @@ WrongAnimal &				WrongAnimal::operator=(WrongAnimal const &rhs)
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, WrongAnimal const & i )
-{
-	(void)i;
-	//o << "Value = " << i.getValue();
-	return o;
-}
 
 
 /*
