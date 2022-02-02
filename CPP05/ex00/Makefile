@@ -1,7 +1,7 @@
-NAME = ClapTrap
+NAME = Bureaucrat
 
 SRCS = main.cpp\
-		ClapTrap.cpp\
+		Bureaucrat.cpp
 
 CC = c++
 
