@@ -37,6 +37,7 @@ Animal &				Animal::operator=(Animal const &rhs)
 	{
 		this->type = rhs.type;
 	}
+	std::cout << "copie par assigment  ANIMAL !!!!!!!!!!!!!!!!!!!!!!" << std::endl;
 	return *this;
 }
 

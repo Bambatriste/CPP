@@ -7,12 +7,15 @@ int main()
 {
 	Animal	*Pets[20];
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 2; i++)
 		Pets[i] = new Dog();
-	for (int i = 10; i < 20; i++)
-		Pets[i] = new Cat();
-	for (int i = 0; i < 20; i++)
-		delete Pets[i];
+	//for (int i = 10; i < 20; i++)
+//		Pets[i] = new Cat();
+	
+	//for (int i = 0; i < 20; i++)
+	//	delete Pets[i];
+
+	*Pets[0] = *Pets[1];
 
 	Dog dog1;
 	Dog dog2(dog1); //deep copy
@@ -39,6 +42,9 @@ int main()
 
 	std::cout << cat3.getBrain()->ideas[4] << std::endl;
 	std::cout << cat3.getBrain()->ideas[5] << std::endl;
+
+	for (int i = 0; i < 2; i++)
+	delete Pets[i];
 
 
 	return (0);

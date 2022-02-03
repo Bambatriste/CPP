@@ -51,6 +51,7 @@ Dog	&Dog::operator=(Dog const &rhs)
 		this->type =  rhs.type;
 		_brain = rhs._brain;
 	}
+	std::cout << "copie par assigment !!!!!!!!!!!!!!!!!!!!!!" << std::endl;
 	return *this;
 }
 
