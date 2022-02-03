@@ -1,7 +1,8 @@
-NAME = Bureaucrats
+NAME = Bureaucrats_and_Forms
 
 SRCS = main.cpp\
-		Bureaucrat.cpp
+		Bureaucrat.cpp\
+		Form.cpp
 
 CC = c++
 

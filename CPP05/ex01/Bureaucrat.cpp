@@ -102,6 +102,11 @@ void	Bureaucrat::downgrade(void)
 	}
 }
 
+void	Bureaucrat::signForm(Form &form)
+{
+	form.beSigned(*this);
+}
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
