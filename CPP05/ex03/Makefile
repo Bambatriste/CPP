@@ -1,4 +1,4 @@
-NAME = ManyForms
+NAME = InternForms
 
 SRCS = main.cpp\
 		Bureaucrat.cpp\
@@ -6,6 +6,7 @@ SRCS = main.cpp\
 		PresidentialPardonForm.cpp\
 		RobotomyRequestForm.cpp\
 		ShrubberyCreationForm.cpp\
+		Intern.cpp\
 
 
 CC = c++
