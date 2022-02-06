@@ -1,19 +1,13 @@
-NAME = InternForms
+NAME = Identify
 
 SRCS = main.cpp\
-		Bureaucrat.cpp\
-		Form.cpp\
-		PresidentialPardonForm.cpp\
-		RobotomyRequestForm.cpp\
-		ShrubberyCreationForm.cpp\
-		Intern.cpp\
-
+		Base.cpp
 
 CC = c++
 
 OBJS = ${SRCS:.cpp=.o}
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
 all : $(NAME)
 

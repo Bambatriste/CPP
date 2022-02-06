@@ -1,33 +1,25 @@
 #include "iter.hpp"
 
-void add_one(int &value)
+void float_increment(float &value)
 {
 	value++;
 }
 
-void display(float &value)
+void float_display(float &value)
 {
 	std::cout << value << std::endl;
 }
 
-int
-	main(void)
+int main()
 {
-	int		a[] = {1, 2, 3, 4, 5};
-	size_t	size = 5;
+	float tab [3] = { 1.1, 2.4 , 5.55};
+	std::string	s[] = {"Hello", "pouet"};
 
-	iter(a, size, add_one);
+	iter(tab, 3, float_display);
+	iter(tab, 3, float_increment);
+	iter(tab, 3, float_display);
 
-	iter(a, size, show);
-	//iter(a, size, addOne);
-	// std::cout << std::endl;
-	// iter(a, size, show);
-
-	// std::string	s[] = {"Hello", "bonjour", "salut"};
-	// size = 3;
-
-	// std::cout << std::endl;
-	// iter(s, size, show);
+	iter(s, 2, display);
 
 	return (0);
 }

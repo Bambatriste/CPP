@@ -1,7 +1,6 @@
-NAME = convert
+NAME = MyOwnArray
 
 SRCS = main.cpp\
-		Converter.cpp\
 
 CC = c++
 
