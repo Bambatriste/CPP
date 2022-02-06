@@ -57,8 +57,6 @@ int
 	std::cout << intArray2.size() << std::endl;
 	std::cout << intArray1.size() << std::endl;
 	std::cout << intArray3.size() << std::endl;
-	
-
 
 	return (0);
 }

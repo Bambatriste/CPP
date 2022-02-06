@@ -37,6 +37,7 @@ class Array
 				throw outOfRangeException();
 			return (_arrayPtr[i]);
 		};
+
 		//functions
 		unsigned int size() const {return (_size);};
 		//nested classes
