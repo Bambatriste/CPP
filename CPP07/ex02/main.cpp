@@ -58,5 +58,11 @@ int
 	std::cout << intArray1.size() << std::endl;
 	std::cout << intArray3.size() << std::endl;
 
+	Array<const float>constArray(42);
+
+	//constArray[1] = 33;
+	/* can not assign to a const array*/
+
+
 	return (0);
 }

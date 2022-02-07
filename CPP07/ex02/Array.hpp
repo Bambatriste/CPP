@@ -8,11 +8,10 @@ class Array
 {
 	public:
 		// constructors
-		Array(): _size(0), _arrayPtr(new T[0]){};
-		Array(unsigned int n): _size(n), _arrayPtr(new T[n]) 
+		Array(): _size(0), _arrayPtr(NULL){};
+		Array(unsigned int n): _size(n), _arrayPtr(NULL) 
 		{
-			for (unsigned int i = 0; i < _size; i++)
-				_arrayPtr[i] = T();
+			this->_arrayPtr = new T[n]();
 		};
 		~Array(void){delete [] _arrayPtr; };
 		Array(Array const &src): _size(src._size)
@@ -37,6 +36,10 @@ class Array
 				throw outOfRangeException();
 			return (_arrayPtr[i]);
 		};
+		T const &operator[](unsigned int i) const
+		{
+			return (operator[](i));
+		}
 
 		//functions
 		unsigned int size() const {return (_size);};
